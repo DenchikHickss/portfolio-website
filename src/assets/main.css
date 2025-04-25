@@ -1,0 +1,129 @@
+/*---------------------------------------*/
+/*           CSS Variables               */
+/*---------------------------------------*/
+:root {
+    --color-bg: #000000;
+    --color-accent: #B4358B;
+    --padding: 80px;
+}
+
+/*---------------------------------------*/
+/*         Fonts                         */
+/*---------------------------------------*/
+
+@font-face {
+    font-family: 'Carmen Sans';
+    src: url('fonts/CarmenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Rotonda';
+    src: url('fonts/Rotunda-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'Big John';
+    src: url('fonts/BigJohnPRO-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Big John';
+    src: url('fonts/BigJohnPRO-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Khmer MN';
+    src: url('fonts/khmer-mn.ttf');
+}
+
+/*---------------------------------------*/
+/*         Global Styles                 */
+/*---------------------------------------*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+}
+
+html {
+    background: var(--color-bg);
+    font-size: 1em;
+    font-family: Carmen Sans, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#app {
+    color: #FFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*---------------------------------------*/
+/*         Animations                    */
+/*---------------------------------------*/
+.animation {
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.slide-in-right {
+    transform: translateX(50%);
+}
+
+.slide-in-left {
+    transform: translateX(-50%);
+}
+
+.slide-in-top {
+    transform: translateY(-50%);
+}
+
+.slide-in-bottom {
+    transform: translateY(50%);
+}
+
+.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/*---------------------------------------*/
+/*         Layout Utils                  */
+/*---------------------------------------*/
+.max-width {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media (max-width: 1000px) {
+    :root {
+        --padding: 10px;
+    }
+
+    #app {
+        overflow-x: hidden;
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: inherit !important;
+    }
+}
